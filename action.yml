@@ -12,10 +12,15 @@ inputs:
     default: "https://www.alpinelinux.org/releases.json"
 
 outputs:
+  os:
+    description: 'List of OS names'
+    value: ${{ steps.alpine.outputs.os }}
+  versions:
+    description: 'List of Alpine versions'
+    value: ${{ steps.alpine.outputs.versions }}
   matrix:
     description: 'Matrix of Alpine versions'
-    value: ${{ fromJson(steps.alpine.outputs) }}
-
+    value: ${{ steps.alpine.outputs.matrix }}
 runs:
   using: "composite"
   steps:
