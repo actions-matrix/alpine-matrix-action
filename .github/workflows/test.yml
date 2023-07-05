@@ -14,12 +14,30 @@ jobs:
       - id: alpine
         uses: ./
     outputs:
-      alpine: ${{ steps.alpine.outputs.matrix }}
+      matrix: ${{ steps.alpine.outputs.matrix }}
+      os: ${{ steps.alpine.outputs.os }}
+      version: ${{ steps.alpine.outputs.version }}
 
-  build:
+  matrix:
     runs-on: ubuntu-latest
     needs: generate
     strategy:
-      matrix: ${{ fromJson(needs.generate.outputs.alpine) }}
+      matrix: ${{ fromJson(needs.generate.outputs.matrix) }}
     steps:
       - run: echo "Build ${{ matrix.os }} ${{ matrix.version }}"
+      
+  os:
+    runs-on: ubuntu-latest
+    needs: generate
+    strategy:
+      matrix: ${{ fromJson(needs.generate.outputs.os) }}
+    steps:
+      - run: echo "Build ${{ matrix.os }}"
+      
+  version:
+    runs-on: ubuntu-latest
+    needs: generate
+    strategy:
+      matrix: ${{ fromJson(needs.generate.outputs.version) }}
+    steps:
+      - run: echo "Build ${{ matrix.version }}"
