@@ -8,3 +8,4 @@ MATRIX_VERSION=$(echo "$ALPINE_RELEASE_BRANCHES" | jq -r '.[].rel_branch | sub("
 
 echo "os=alpine" >> "$GITHUB_OUTPUT"
 echo "version=${MATRIX_VERSION}" >> "$GITHUB_OUTPUT"
+echo "matrix: os=alpine,version=${MATRIX_VERSION}" >> "$GITHUB_OUTPUT"
