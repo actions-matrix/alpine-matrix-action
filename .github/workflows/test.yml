@@ -14,7 +14,7 @@ jobs:
       - id: alpine
         uses: ./
     outputs:
-      alpine: ${{ steps.alpine.outputs }}
+      alpine: ${{ steps.alpine.outputs.matrix }}
 
   build:
     runs-on: ubuntu-latest
