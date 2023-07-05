@@ -31,7 +31,11 @@ jobs:
 **Example**
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/actions-matrix/alpine-matrix-action/assets/4363857/717856f8-1656-41a1-836b-13955d27f1ee">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/actions-matrix/alpine-matrix-action/assets/4363857/4f344d14-7d99-4e2a-baa2-9312cb4f3b7d">
-  <img alt="Screenshot" src="https://github.com/actions-matrix/alpine-matrix-action/assets/4363857/717856f8-1656-41a1-836b-13955d27f1ee">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/actions-matrix/alpine-matrix-action/assets/4363857/8cf23a35-1d51-491d-b897-d4fbc1a51a61">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/actions-matrix/alpine-matrix-action/assets/4363857/1b5fa538-b6f5-45d0-bb79-4c7447b4a179">
+  <img alt="Screenshot" src="https://github.com/actions-matrix/alpine-matrix-action/assets/4363857/1b5fa538-b6f5-45d0-bb79-4c7447b4a179">
 </picture>
+
+## License
+
+Licensed under [MIT license](LICENSE).
