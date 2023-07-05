@@ -1,0 +1,24 @@
+name: alpine-matrix-action
+description: GitHub Action to generate Alpine releases matrix
+
+inputs:
+  count:
+    description: 'Number of releases to include in the matrix'
+    required: true
+    default: "3"
+  release_url:
+    description: 'URL to Alpine releases JSON'
+    required: false
+    default: "https://www.alpinelinux.org/releases.json"
+
+outputs:
+  matrix:
+    description: 'Matrix of Alpine versions'
+    value: ${{ steps.generate-jobs.outputs }}
+
+runs:
+  using: "composite"
+  steps:
+    - id: generate-jobs
+      shell: bash
+      run: ${{ github.action_path }}/action.sh ${{ inputs.release_url }} ${{ inputs.count }}
