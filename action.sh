@@ -11,6 +11,6 @@ gh_set_output() {
     echo "$1=$2" >> "$GITHUB_OUTPUT"
 }
 
-gh_set_output "os" "alpine"
+gh_set_output "os" "[\"alpine\"]"
 gh_set_output "version" "${MATRIX_VERSION}"
 gh_set_output "matrix" "{\"os\": \"alpine\",\"version\": ${MATRIX_VERSION}}"
