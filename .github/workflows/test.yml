@@ -30,7 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: generate
     strategy:
-      matrix: ${{ fromJson(needs.generate.outputs.os) }}
+      matrix:
+        os: ${{ fromJson(needs.generate.outputs.os) }}
     steps:
       - run: echo "Build ${{ matrix.os }}"
       
@@ -38,6 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: generate
     strategy:
-      matrix: ${{ fromJson(needs.generate.outputs.version) }}
+      matrix:
+        version: ${{ fromJson(needs.generate.outputs.version) }}
     steps:
       - run: echo "Build ${{ matrix.version }}"

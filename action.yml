@@ -17,7 +17,7 @@ outputs:
     value: ${{ steps.alpine.outputs.os }}
   versions:
     description: 'List of Alpine versions'
-    value: ${{ steps.alpine.outputs.versions }}
+    value: ${{ steps.alpine.outputs.version }}
   matrix:
     description: 'Matrix of Alpine versions'
     value: ${{ steps.alpine.outputs.matrix }}
