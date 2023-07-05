@@ -14,11 +14,11 @@ inputs:
 outputs:
   matrix:
     description: 'Matrix of Alpine versions'
-    value: ${{ steps.generate-jobs.outputs }}
+    value: ${{ fromJson(steps.alpine.outputs) }}
 
 runs:
   using: "composite"
   steps:
-    - id: generate-jobs
+    - id: alpine
       shell: bash
       run: ${{ github.action_path }}/action.sh ${{ inputs.release_url }} ${{ inputs.count }}
