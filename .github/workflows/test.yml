@@ -10,6 +10,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - id: alpine
         uses: ./
     outputs:
@@ -21,4 +22,4 @@ jobs:
     strategy:
       matrix: ${{ fromJson(needs.generate.outputs.alpine) }}
     steps:
-      - run: echo "Build ${{ matrix.version}}"
+      - run: echo "Build ${{ matrix.os }} ${{ matrix.version }}"
