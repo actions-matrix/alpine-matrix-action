@@ -1,6 +1,10 @@
 name: alpine-matrix-action
 description: GitHub Action to generate Alpine releases matrix
 
+branding:
+  icon: 'tag'
+  color: 'blue'
+
 inputs:
   count:
     description: 'Number of releases to include in the matrix'
@@ -21,6 +25,7 @@ outputs:
   matrix:
     description: 'Matrix of Alpine versions'
     value: ${{ steps.alpine.outputs.matrix }}
+
 runs:
   using: "composite"
   steps:
