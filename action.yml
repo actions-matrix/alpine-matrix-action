@@ -10,6 +10,10 @@ inputs:
     description: 'Number of releases to include in the matrix'
     required: true
     default: "3"
+  latest:
+    description: 'Include latest release in the matrix'
+    required: false
+    default: "false"
   release_url:
     description: 'URL to Alpine releases JSON'
     required: false
@@ -31,4 +35,4 @@ runs:
   steps:
     - id: alpine
       shell: bash
-      run: ${{ github.action_path }}/action.sh ${{ inputs.release_url }} ${{ inputs.count }}
+      run: ${{ github.action_path }}/action.sh ${{ inputs.release_url }} ${{ inputs.latest }} ${{ inputs.count }}
